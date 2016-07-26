@@ -114,13 +114,6 @@ public class MovieModel{
     /**
      * Movie object that acts as the POJO for an item in the JSON array "results".
      *
-     * Notes: This is more for me based on an internal conflict about understanding "static" in Java...
-     *        So why the make this class static? The simple answer is because I needed to for implementing
-     *        CREATOR (new Movie(source) will produce an error since CREATOR is static). But thinking about it
-     *        a little more, a static inner class implies that we don't need the wrapping class. Based on the Retrofit
-     *        enqueue call in MoviesOverviewFragment, it seems like we would because MovieModel gives us access to Movie,
-     *        but throughout the program, all that matters is the movie. MovieModel is like your lame younger
-     *        brother that you just HAVE to bring because mommy said so.
      */
     public static class Movie implements Parcelable{
         @SerializedName("poster_path")
